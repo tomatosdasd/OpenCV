@@ -1,0 +1,72 @@
+
+body {
+    margin: 0;
+}
+
+
+.mainContianer {
+    width: 100vw;
+    height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.mainSubDiv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 20%;
+    
+}
+
+
+
+.inputFileCustom {
+    margin: 0 1.5vh 0 1.5vh;
+    font-weight: bold;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+
+    background-color: black;
+    color: white;
+
+
+    border-radius: 50px;
+    width: 7%;
+    height: 27%;
+
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+
+    &:hover{
+        background-color: white;
+        border: 1px solid gray;
+        color: black;
+    }
+
+    cursor: pointer;
+}
+
+.mainImage {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+
+    width: 50%;
+    height: 50%;
+}
+
+
+.preViewImg {
+    width: 100%;
+    height: 100%;
+}

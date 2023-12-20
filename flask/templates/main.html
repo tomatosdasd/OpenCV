@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href=" {{ url_for('static', filename='css/main.css') }}">
+    <title>Document</title>
+</head>
+<body>
+    <form action="http://localhost:5000/uploader" method="POST" enctype="multipart/form-data">
+    <div class="mainContianer">
+        <div class="mainSubDiv">
+          <label class="inputFileCustom" for="inputFile" >이미지</label>
+          <input type="file" name="file"  id="inputFile" accept="image/*" style="display: none;" onchange="setThumbnail(event);"/>
+          <input class="inputFileCustom" type="submit" value="분석">
+            
+        </div>
+
+        <div id="image_container" class="mainImage"></div>
+    </div>
+</form>
+</body>
+
+<script>
+ function setThumbnail(event) {
+    var existingImages = document.querySelectorAll(".preViewImg");
+    if (existingImages.length === 0) {
+        var reader = new FileReader();
+
+        reader.onload = function(event) {
+            var img = document.createElement("img");
+            img.className = "preViewImg";
+            img.setAttribute("src", event.target.result);
+            document.querySelector("div#image_container").appendChild(img);
+        };
+
+        reader.readAsDataURL(event.target.files[0]);
+    } else {
+        alert("이미지는 하나만 업로드할 수 있습니다.");
+    }
+  }
+  </script>
+</html>
